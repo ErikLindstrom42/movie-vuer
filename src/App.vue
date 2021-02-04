@@ -1,28 +1,33 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-app>
+    <app-header />
+    <v-main>
+      <v-container>
+        <search-results />
+        <v-row class="mt-6">
+          <v-col :sm="12" :md="6"> </v-col>
+          <movie-details />
+          <v-col :sm="12" :md="6">
+            <movie-reviews />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import AppHeader from "./components/AppHeader.vue";
+import MovieDetails from "./components/MovieDetails.vue";
+import MovieReviews from "./components/MovieReviews.vue";
+import SearchResults from "./components/SearchResults";
 
 export default {
-  name: "App",
   components: {
-    HelloWorld
-  }
+    SearchResults,
+    AppHeader,
+    MovieDetails,
+    MovieReviews,
+  },
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
